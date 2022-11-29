@@ -1,4 +1,6 @@
 """The main logic of a choice algorythm."""
+from typing import Tuple
+
 from choice_queue import Queue
 
 
@@ -19,8 +21,10 @@ class Asker:
             first_variant = self.q.queue[self.q.tail - 1]
             second_variant = self.q.queue[self.q.tail - 2]
             return first_variant, second_variant
-        self.rating.append(self.q.queue[self.q.head])
-        raise IndexError('Nothing to choose')
+        if len(self.rating) < self.q.max_n:
+            self.rating.append(self.q.queue[self.q.head])
+            return self.rating
+        # raise IndexError('Nothing to choose')
 
     def answer(self, choice: str) -> None:
         """Here you can make another choice."""
@@ -36,6 +40,10 @@ class Asker:
         self.q.push(winner)
         self.rating.append(loser)
 
+    def get_progress(self) -> Tuple[int, int]:
+        """Returns current progress and maximum number of choices."""
+        return abs(self.q.size - self.q.max_n) + 1, self.q.max_n - 1
+
     def __str__(self):
         return self.q.__str__()
 
@@ -44,6 +52,7 @@ if __name__ == '__main__':
     """Quick example."""
     sample = ('1 + 1, Джентльмены, Волк с Уолл-стрит, Гнев человеческий, '
               'Брат, Аватар, Начало, Побег из Шоушенка')
+    sample = '1, 2, 3'
     sample = sample.split(',')
     sample = list(map(str.strip, sample))  # Remove leading whitespaces
     sample = list(set(sample))  # Remove repeats and shuffle choices
@@ -52,15 +61,19 @@ if __name__ == '__main__':
     print(a)
 
     while True:
-        try:
-            print(a.ask())
+        if not a.is_ended():
+            aa, b = a.ask()
+            print(aa, b)
+            progress, maximum = a.get_progress()
+            print(f'Progress is {progress}/{maximum}')
             user_choice = input()
             try:
                 a.answer(user_choice)
             except Exception as e:
                 print(e)
-        except IndexError as e:
+        # except IndexError as e:
+        else:
             print()
             print('Result:')
-            print(a.rating[::-1])
+            print(a.ask()[::-1])
             break
