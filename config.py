@@ -1,0 +1,5 @@
+sticker_id = {
+    'hello': 'CAACAgIAAxkBAAEFE91irjUKGAbLaaTbvkM6_cPw39A1bwACbgADwDZPE22H7UqzeJmXJAQ',
+    'error': 'CAACAgIAAxkBAAEFE9NirjNASnFs6L5DyvxRN9579rp80QACdgADwDZPE3QapjQbGEnJJAQ',
+    'victory': 'CAACAgIAAxkBAAEFE8BiriqdBsWK8csW3exdwmW5VO8HZwACbQADwDZPE7mMKCVnSEkbJAQ'
+}
