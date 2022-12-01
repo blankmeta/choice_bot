@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eebf7ec9-d149-4b26-812d-7c086f599c76" name="Changes" comment="Critical events logging">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +98,7 @@
       <updated>1669657205498</updated>
       <workItem from="1669657207462" duration="14406000" />
       <workItem from="1669749731435" duration="634000" />
-      <workItem from="1669909330843" duration="1089000" />
+      <workItem from="1669909330843" duration="1130000" />
     </task>
     <task id="LOCAL-00001" summary="MVP">
       <created>1669744077920</created>
@@ -129,7 +128,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669910362094</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Critical events logging">
+      <created>1669910437507</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1669910437507</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
